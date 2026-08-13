@@ -1,28 +1,12 @@
-"use client";
-
-import { useState, useEffect } from "react";
-
-export default function Restaurants() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  async function fetchData() {
-    const response = await fetch("https://jsonplaceholder.typicode.com/todos");
-    const data = await response.json();
-    console.log(data);
-    setData(data);
-  }
-
-  if (data === null) {
-    return <div>Loading...</div>;
-  }
+export default async function Todo() {
+    
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await response.json();
+  console.log(data);
 
   return (
     <div>
-      <h1>Todos Page</h1>
+      <h1>Todo Page: </h1>
       {data.map((todoObj) => {
         return <TodoComponent key={todoObj.id} prop={todoObj} />;
       })}
