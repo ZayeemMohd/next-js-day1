@@ -1,8 +1,14 @@
+export const dynamic = "force-dynamic";
+
 export default async function Todo() {
-    
+  
+  
   const response = await fetch("https://jsonplaceholder.typicode.com/todos");
   const data = await response.json();
   console.log(data);
+  
+  
+  //  await new Promise(resolve => setTimeout(resolve, 5000));
 
   return (
     <div>
