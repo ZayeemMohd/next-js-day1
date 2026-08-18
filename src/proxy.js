@@ -25,5 +25,5 @@ export async function proxy(request) {
 
 // 5. Specify which routes this proxy should protect
 export const config = {
-  matcher: ['/api/v1/users'], 
+  matcher: [], 
 };
